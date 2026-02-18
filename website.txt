@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MOHAMMED SAKIB | Portfolio</title>
+
+<style>
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  background:linear-gradient(135deg,#0b1020,#070a14);
+  color:white;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:20px;
+}
+
+/* HEADER */
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 0;
+  position:sticky;
+  top:0;
+  background:rgba(11,16,32,.7);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+}
+
+.logo{
+  font-size:22px;
+  font-weight:bold;
+}
+
+nav a{
+  margin-left:20px;
+  text-decoration:none;
+  color:#b9c3e6;
+  position:relative;
+}
+
+nav a::after{
+  content:"";
+  position:absolute;
+  bottom:-5px;
+  left:0;
+  width:0%;
+  height:2px;
+  background:#7c5cff;
+  transition:.3s;
+}
+
+nav a:hover::after{
+  width:100%;
+}
+
+/* HERO */
+.hero{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
+  margin-top:40px;
+}
+
+.hero img{
+  width:100%;
+  height:450px;
+  object-fit:cover;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,.5);
+}
+
+h1{
+  font-size:46px;
+  margin:10px 0;
+}
+
+p{
+  color:#b9c3e6;
+  line-height:1.6;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:15px;
+  margin-right:10px;
+  padding:12px 20px;
+  border-radius:12px;
+  text-decoration:none;
+  color:white;
+  background:linear-gradient(135deg,#7c5cff,#22c55e);
+  font-weight:bold;
+  transition:.3s;
+}
+
+.btn:hover{
+  transform:translateY(-3px) scale(1.05);
+  box-shadow:0 10px 20px rgba(124,92,255,.4);
+}
+
+/* SECTIONS */
+.section{
+  margin-top:80px;
+  opacity:0;
+  transform:translateY(40px);
+  transition:.6s;
+}
+
+.section.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.card{
+  background:rgba(255,255,255,0.05);
+  padding:25px;
+  border-radius:20px;
+  backdrop-filter:blur(10px);
+  margin-top:20px;
+}
+
+.social a{
+  display:inline-block;
+  margin:10px 10px 0 0;
+  padding:10px 16px;
+  border-radius:10px;
+  background:#1a2444;
+  text-decoration:none;
+  color:white;
+  transition:.3s;
+}
+
+.social a:hover{
+  background:#7c5cff;
+}
+
+/* FOOTER */
+footer{
+  margin-top:80px;
+  text-align:center;
+  color:#b9c3e6;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .hero{
+    grid-template-columns:1fr;
+  }
+
+  h1{
+    font-size:36px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+<div class="logo">MOHAMMED SAKIB</div>
+<nav>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+<div>
+<h1>Hi, I'm Sakib 👋</h1>
+<p>
+Born in <b>Chattogram</b> and currently living in <b>Dubai</b>.  
+I create professional websites and business systems that help people grow.
+</p>
+
+<a class="btn" href="https://wa.me/971508365664" target="_blank">WhatsApp</a>
+<a class="btn" href="https://www.facebook.com/Mohammedsakib1159" target="_blank">Facebook</a>
+<a class="btn" href="https://www.instagram.com/sakib_x_chowdhury/" target="_blank">Instagram</a>
+</div>
+
+<div>
+<img src="sakib.png" alt="Mohammed Sakib">
+</div>
+</div>
+
+<!-- ABOUT -->
+<div id="about" class="section">
+<h2>About Me</h2>
+<div class="card">
+<p>
+My name is <b>Mohammed Sakib</b>. I am from <b>Chattogram</b> and now living in <b>Dubai</b>.  
+I specialize in building modern, responsive websites and simple business tools.
+</p>
+</div>
+</div>
+
+<!-- SERVICES -->
+<div id="services" class="section">
+<h2>Services</h2>
+<div class="card">
+<p>✔ Personal Portfolio Website</p>
+<p>✔ Business Website Development</p>
+<p>✔ Basic Accounting / Business Tools</p>
+<p>✔ Landing Page Design</p>
+</div>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="section">
+<h2>Contact</h2>
+<div class="card social">
+<p>📱 WhatsApp: +971508365664</p>
+
+<a href="https://wa.me/971508365664" target="_blank">Chat on WhatsApp</a>
+<a href="https://www.facebook.com/Mohammedsakib1159" target="_blank">Facebook</a>
+<a href="https://www.instagram.com/sakib_x_chowdhury/" target="_blank">Instagram</a>
+</div>
+</div>
+
+</div>
+
+<footer>
+© 2026 MOHAMMED SAKIB — All Rights Reserved
+</footer>
+
+<script>
+/* FADE IN ON SCROLL */
+const sections = document.querySelectorAll('.section');
+
+window.addEventListener('scroll',()=>{
+  sections.forEach(sec=>{
+    const top = window.scrollY;
+    const offset = sec.offsetTop - 400;
+    if(top > offset){
+      sec.classList.add('show');
+    }
+  });
+});
+</script>
+
+</body>
+</html>
